@@ -2,6 +2,8 @@ plugins {
     id 'ferritecore.subproject-conventions'
 }
 
+evaluationDependsOn(':Common')
+
 String makeVersionSuffix() {
     if (System.getenv("GITHUB_ACTIONS") != null) {
         return "-GH"+System.getenv("GITHUB_RUN_NUMBER");
